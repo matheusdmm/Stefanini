@@ -10,9 +10,6 @@ import data from './users.json';
 const dataStorage = window.localStorage.getItem('data');
 const newData = JSON.parse(dataStorage);
 
-console.log(data);
-console.log(newData);
-
 export default function Login() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -45,7 +42,7 @@ export default function Login() {
     // iterate through the object to get the login information
     Object.keys(newData).forEach((key) => {
       let value = newData[key];
-    
+
       // if the username and pwd matches the one in the localstorage/json
       // the login is true
       if (name === value.username && password === value.password) {
